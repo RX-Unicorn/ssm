@@ -25,7 +25,7 @@
         <!-- 权限管理器 -->
         <property name="securityManager" ref="securityManager"/>
         <!-- 登录地址 -->
-        <property name="loginUrl" value="/login1.jsp"/>
+        <property name="loginUrl" value="/index.jsp"/>
         <!-- 登录成功后要跳转的连接(本例中此属性用不到，因为登录成功后的处理逻辑在LoginController里硬编码) -->
         <!-- <property name="successUrl" value="/" ></property> -->
         <!-- 用户访问未对其授权的资源时，所显示的连接 -->
@@ -38,11 +38,11 @@
                 /login.do = anon
                 /static/**=anon
                 <!-- 需要权限为add的用户才能访问此请求-->
-                /user=perms[user:add]
+                <!--/user=perms[user:add]-->
                 <!-- 需要管理员角色才能访问此页面 -->
-                /user/add=roles[admin]
+                <!--/user/add=roles[admin]-->
                 <!--拦截非静态资源的所有请求-->
-                /** = authc
+                <!--/** = anon-->
             </value>
         </property>
     </bean>
